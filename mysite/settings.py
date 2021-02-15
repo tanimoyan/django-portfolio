@@ -61,6 +61,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.media',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -121,4 +122,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# ... 追記部分 ...
+
+# 画像を保存する先の指定
+MEDIA＿ROOT = os.path.join(BASE_DIR, 'media')
+
+# 画像をdjango側で読み込むための設定
+MEDIA_URL = '/media/'

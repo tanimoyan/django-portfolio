@@ -1,0 +1,33 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="content container">
+    <div class="row">
+        <h2 style="text-align:center">{{ post.title }}</h2>
+        <div class="col-md-12">
+            <div class="post">
+                <img src='{{ MEDIA_URL }}{{ post.topimage }}' >
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="post">
+                <div class="description">
+                    <h3 style="text-align:center">DESCRIPTION</h3>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="post">
+                <div class="information">
+                    <h3 style="text-align:center">INFORMATION</h3>
+                    <ul>
+                        <li>skill:{{ post.skill }}</li>
+                        <li>github:<a href="{{ post.github }}" target="_blank" rel="noopener noreferrer">{{ post.github }}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
